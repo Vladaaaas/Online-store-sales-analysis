@@ -1,4 +1,3 @@
-import numpy as np
 import pandas as pd
 import random
 from datetime import datetime, timedelta
@@ -13,6 +12,7 @@ products = {
     "ipad": 550,
     "watch": 300,
     "TV": 880,
+    "mouse": 50
 }
 
 #list of products
@@ -28,7 +28,7 @@ data = {
     "customer_id": [f"P{random.randint(1, 400):03}" for i in range(num_orders)],
     "order_date": dates,
     "product": [random.choice(products_name) for i in range(num_orders)],
-    "quntity": [random.randint(1, 4) for i in range(num_orders)],
+    "quantity": [random.randint(1, 4) for i in range(num_orders)],
 }
 
 #Add price
@@ -40,4 +40,4 @@ df = pd.DataFrame(data)
 df.to_csv("dales_data.csv", index=False)
 
 
-print(df.head())
+print(df)
